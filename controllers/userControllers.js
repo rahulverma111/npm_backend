@@ -6,7 +6,7 @@ exports.getAllusers = async(req,res)=>{
 
     res.status(200).json({
     status:'All users details fetched sucsess',
-    length:users.length,
+    NoOfusers:users.length,
     users
 })
 }

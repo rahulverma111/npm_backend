@@ -11,7 +11,7 @@ if(packages.length===0){
 }
 res.status(200).json({
     status:'Getting all fev package',
-    length:packages.length,
+    NoofFavpackages:packages.length,
     packages
 })
 };
@@ -80,8 +80,14 @@ exports.updateUserOneFevPackage = async(req,res)=>{
             });
             return;
         }
+        if(matchedData.user_id !== user_id){
+            res.status(400).json({
+                message:"User id not matched with package id"
+            })
+            return;
+        }
 
-        await UserFavPackage.update({package,comment},{where:{id}});
+        await UserFavPackage.update({package,comment},{where:{id,user_id}});
         res.status(200).json({
             status:"Fev package updatation succsess!",
             UpdatedPackage: matchedData
@@ -100,9 +106,16 @@ exports.deleteUserOneFevpackage = async(req,res)=>{
     const{id}=req.body;
 
     try{
-        const a = await UserFavPackage.destroy({
+        const matched = await UserFavPackage.destroy({
             where:{id,user_id}
         });
+        
+        if(!matched ){
+            res.status(400).json({
+                message:'somthing went wrong!!!'
+            });
+            return;
+        }
 
         res.status(200).json({
             message:"Fevorate pakage deleted"
