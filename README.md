@@ -28,12 +28,12 @@ For this project we can use two routes one is related to user and other one is f
 
 # 1. User Table
 
-    | ID |   Name  |    EmailId    |  Contact_No  |
-    |:--:| :-----: | :-----------: | :----------: |
-    | 23 |  rahul  | rahul@abc.com |  1234567890  |
+| ID |   Name  |    EmailId    |  Contact_No  |
+|:--:| :-----: | :-----------: | :----------: |
+| 23 |  rahul  | rahul@abc.com |  1234567890  |
 
 # 2. FavoratePackageTable 
 
-    | Id | User_Id | Package_Name |       Comment        |
-    |:--:| :-----: | :----------: | :------------------: |
-    |  1 |    23   |    react     | React is easy to use |
+| Id | User_Id | Package_Name |       Comment        |
+|:--:| :-----: | :----------: | :------------------: |
+|  1 |    23   |    react     | React is easy to use |
