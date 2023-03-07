@@ -41,4 +41,24 @@ For this project we can use two routes one is related to user and other one is f
 
 ## How to use 
 
-- toget all user
+### users
+
+- to get all user(get) 
+[Click here](https://myfevnpm.onrender.com/api/v1/users/)
+
+- to signup (post)
+[Click here](https://myfevnpm.onrender.com/api/v1/users/signup)
+
+- to login (get with login details(email password))
+[Click here](https://myfevnpm.onrender.com/api/v1/users/login)  
+
+- to delete user(delete with id)
+[Click here](https://myfevnpm.onrender.com/api/v1/users/)
+
+### users favorates
+
+- to get all fevorate package (get)
+[Click here](https://myfevnpm.onrender.com/api/v1/package/:id) 
+
+- to get all fevorate package (get)
+[Click here](https://myfevnpm.onrender.com/api/v1/package/:id)  
