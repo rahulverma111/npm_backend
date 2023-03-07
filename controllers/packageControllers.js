@@ -1,5 +1,5 @@
 const { where } = require('sequelize');
-const {UserFavPackage }= require('./../connection');
+const {UserFavPackage }= require('../DbConnect');
 
 
 exports.getAllPackage= async(req,res)=>{

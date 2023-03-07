@@ -1,5 +1,5 @@
 // const catchAsync = require('./../utils/catchAsync');
-const {User}= require('../connection');
+const {User}= require('../DbConnect');
 
 const bcrypt = require('bcrypt');
 const { async } = require('validate.js');
