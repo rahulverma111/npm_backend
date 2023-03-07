@@ -2,7 +2,7 @@ const { where } = require('sequelize');
 const {UserFavPackage }= require('./../connection');
 
 
-exports.getAllPackage= async(req,res,next )=>{
+exports.getAllPackage= async(req,res)=>{
 const packages = await UserFavPackage.findAll();
 if(packages.length===0){
     res.status(200).json({

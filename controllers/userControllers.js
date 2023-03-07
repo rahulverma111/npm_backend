@@ -1,5 +1,45 @@
 // const catchAsync = require('./../utils/catchAsync');
-const {User}= require('../connection')
+const {User}= require('../connection');
+
+const bcrypt = require('bcrypt');
+const { async } = require('validate.js');
+ 
+exports.login = async(req,res)=>{
+    const{email,password} = req.body;
+try{
+    const user = await User.findOne({
+        where:{email}
+    });
+    if(!user){
+        res.status(400).json({
+            message:'Email or Password is wrong!!'
+        })
+        return;
+    }
+    
+    const ans = bcrypt.compareSync(password, user.password); 
+    if(ans){
+        res.status(200).json({
+            status:'You are logged in',
+            user
+        })
+    }else{
+        res.status(400).json({
+            message:'Email or Password is wrong!!'
+        })
+        return;
+
+    }
+    
+}catch(err){
+    res.status(200).json({
+        message:'Somthing went wrong. try Again!!!',
+        err
+    });
+
+}
+
+}
 
 exports.getAllusers = async(req,res)=>{
     const users = await User.findAll();
@@ -11,10 +51,14 @@ exports.getAllusers = async(req,res)=>{
 })
 }
 
-exports.createUser = async(req,res,next)=>{
-    const {name,email,contact}=req.body;
+exports.signup = async(req,res,next)=>{
+    const {name,email,password,contact}=req.body;
+    const incryptedpassword = bcrypt.hashSync(password, 10); 
     const user = await User.create({
-        name,email,contact
+        name,
+        email,
+        contact,
+        password:incryptedpassword
     });
  
     res.status(200).json({

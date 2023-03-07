@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config({path:'./config.env'});
 
-// console.log(process.env.DATABASE);
+ ;
 
 const sequelize = new Sequelize(process.env.DATABASE, process.env.USER_NAME, process.env.DATABASE_PASS, {
     host: 'localhost',
@@ -30,6 +30,12 @@ const User = sequelize.define('User',{
         unique:true,
         allowNull:false
     },
+    password:{
+        type:DataTypes.STRING,
+        unique:true,
+        allowNull:false
+    }
+    ,
     contact:{
         type:DataTypes.STRING,
         unique:true,
