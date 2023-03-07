@@ -9,7 +9,7 @@ require('dotenv').config({path:'./config.env'});
 // });
 
 
-const sequelize = new Sequelize('postgres://rahul:YCLVBNgC6OkqNH0GuyApgYByBhhOCKLQ@dpg-cg3gp01mbg5fch4jq5q0-a.oregon-postgres.render.com/user_database_0xba?ssl=true')
+const sequelize = new Sequelize(process.env.CONNECTION_LINK);
 
 sequelize.authenticate().then(()=>{
     console.log('Connection has been established successfully.');

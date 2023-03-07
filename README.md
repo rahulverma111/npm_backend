@@ -26,14 +26,19 @@ For this project we can use two routes one is related to user and other one is f
 
 - For this project we need two table : one is for users related information and other one is for user fevorate packages
 
-# 1. User Table
+#### 1. User Table
 
-| ID |   Name  |    EmailId    |  Contact_No  |
-|:--:| :-----: | :-----------: | :----------: |
-| 23 |  rahul  | rahul@abc.com |  1234567890  |
+| ID |   Name  |    EmailId    |  Contact_No  |  password   |
+|:--:| :-----: | :-----------: | :----------: | :--------:  |
+| 23 |  rahul  | rahul@abc.com |  1234567890  | hashed pass |
 
-# 2. FavoratePackageTable 
+#### 2. FavoratePackageTable 
 
 | Id | User_Id | Package_Name |       Comment        |
 |:--:| :-----: | :----------: | :------------------: |
 |  1 |    23   |    react     | React is easy to use |
+
+
+## How to use 
+
+- toget all user
